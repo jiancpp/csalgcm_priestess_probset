@@ -32,16 +32,24 @@ Output consists of one line containing Palpatine's power $P$ after $T$ milliseco
 
 
 ### Sample Input 0
-`2 4`
+```text
+2 4
+```
 
 ### Sample Output 0
-`16`
+```text
+16
+```
 
 ### Sample Input 1
-`10 4`
+```text
+10 4
+```
 
 ### Sample Output 1
-`10000`
+```text
+10000
+```
 
 ---
 
@@ -79,21 +87,25 @@ For each query, output one line containing a single integer which denotes the nu
 
 ### Sample Input 0
 
-`3 6 7
+```text
+3 6 7
 -10 10
 -6 0
 8 7
 3
 30
 6
-1`
+1
+```
 
 
 ### Sample Output 0
 
-`3
+```text
+3
 1
-0`
+0
+```
 
 
 ### Explanation 0
@@ -144,47 +156,56 @@ For each attack executed before the collapse of a tower, print a line containing
 
 ### Sample Input 0
 
-`5 1
+```text
+5 1
 8
 3
 7
 11
 5
-39`
+39
+```
 
 
 ### Sample Output 0
 
-`2
+```text
+2
 1
 1
 1
-0`
+0
+```
 
 
 ### Sample Input 1
 
-`6 1
+```text
+6 1
 23
 21
 56
 51
 51
 56
-92`
+92
+```
 
 
 ### Sample Output 1
 
-`5
+```text
+5
 5
 1
-0`
+0
+```
 
 
 ### Sample Input 2
 
-`7 1
+```text
+7 1
 54
 60
 55
@@ -192,18 +213,21 @@ For each attack executed before the collapse of a tower, print a line containing
 367
 42
 57
-19`
+19
+```
 
 
 ### Sample Output 2
 
-`5
+```text
+5
 1
 1
 1
 1
 1
-0`
+0
+```
 
 ---
 
@@ -243,21 +267,25 @@ There will be $N$ lines of outputs, each line being the **lowest starting water 
 
 ### Sample Input 0
 
-`5
+```text
+5
 0.7119 -0.1206 2.9930 4.0577
 0.9219 0.1963 2.7140 4.3201
 0.2692 -0.0695 2.9132 1.6116
 0.3601 -0.1771 0.6213 1.1870
-0.3492 -0.3865 3.8889 2.5649`
+0.3492 -0.3865 3.8889 2.5649
+```
 
 
 ### Sample Output 0
 
-`0.697784503037
+```text
+0.697784503037
 0.887908531876
 0.921929270250
 0.645118392190
-0.599166042326`
+0.599166042326
+```
 
 
 ### Explanation 0
@@ -266,25 +294,29 @@ On the first day, a starting water level of $0.6977845$, with $d = -0.1206$, $k 
 
 ### Sample Input 1
 
-`7
+```text
+7
 0.2772 0.2253 4.2550 1.9385
 0.2807 -0.2682 1.5963 1.6372
 0.9055 0.0522 2.5857 2.2600
 0.3196 -0.2520 2.7628 0.9047
 0.6853 -0.2366 3.6572 2.5567
 0.7148 -0.1846 0.9737 4.1721
-0.9411 -0.1370 2.0860 2.6794`
+0.9411 -0.1370 2.0860 2.6794
+```
 
 
 ### Sample Output 1
 
-`Sweet spot cannot be reached! Those cheeky developers!
+```text
+Sweet spot cannot be reached! Those cheeky developers!
 0.793247141838
 0.387402764833
 0.340837109300
 0.353158012405
 0.817511673620
-Sweet spot cannot be reached! Those cheeky developers!`
+Sweet spot cannot be reached! Those cheeky developers!
+```
 
 
 ### Explanation 1
@@ -292,4 +324,129 @@ Sweet spot cannot be reached! Those cheeky developers!`
 On the first day, it is impossible to reach an evaporation rate within $10^{-6}$ of $0.2772$ given $d=0.2253, k=4.2550$, and $a=1.9385$.
 
 ---
+
+## The Monkey's Paw
+
+Richie likes to watch movies at the local cineplex. His only complaint with the universe right now seems to be that there simply aren't enough hours in a day watch, like, $10^7$ movies in one day for example. That all changed the day Richie found the Monkey's Paw.
+
+The Monkey's Paw spoke in a low voice and offered him three wishes. Richie wished for more wishes, wasting his first wish. With his second wish, he wished for the day to be long enough to show a lot of movies, which The Paw defined as $N$ movies. For his final wish, Richie wished to be able to stay awake to watch all of them, which The Paw granted.
+
+The next day, Richie went to the cineplex. He had only $A$ pesos and ticket prices were $K$ pesos per ticket. To save time, Richie rips out a range of movies. He then keeps watching the **longest film** he hasn't seen yet, spending $K$ pesos per ticket, until his $A$ pesos are insufficient to buy another ticket. You can assume that The Monkey's Paw made it so that all the movies showing have not been watched by Richie before.
+
+Richie proceeds to do this until he's out of money, only picking movies from the range he ripped out to save time.
+
+Basically, given $N$ films each with their runtimes, you must answer $Q$ queries. For each query, please print the runtime of the last film Richie is able to see.
+
+### Input Format
+
+Input starts with a line containing a single integer $N$ denoting the **number of movies** showing in the theater.
+
+$N$ lines follow, the $i^{th}$ of which contains two space-separated integers $R_i$ and $C_i$. $R_i$ is the **runtime** of the film. $C_i$ is the length of the **credits**. Richie always leaves before the credits, so you can subtract the credits from the runtime when computing for the answer.
+
+This is followed by a line containing a single integer $Q$ denoting the **number of queries**.
+
+$Q$ lines follow, each containing 4 space-separated integers $S$, $E$, $A$, and $K$. $S$ and $E$ denote the **start index** and **end index** of the movie range, respectively. Indices are 0-based. $A$ is Richie's **budget**. $K$ is the **cost of a single ticket**.
+
+### Constraints
+
+$$1 \leq N \leq 10^6$$
+$$1 \leq C_i \leq R_i \leq 10^9$$
+$$1 \leq Q \leq 4000$$
+$$0 \leq S \leq E < N$$
+$$0 \leq E - S < 10^4$$
+$$1 \leq A, K \leq 10^9$$
+
+### Output Format
+
+For each query, output one line containing the length of the **last movie Richie watches, without the credits**. The length should be based on the strategy described in the problem statement. If Richie can't watch any movie, output **-1**.
+
+### Sample Input 0
+```text
+8
+148 116
+157 100
+169 15
+188 98
+91 68
+165 70
+145 2
+11 6
+3
+2 6 52 12
+2 6 13 7
+0 4 2 3
+```
+
+
+### Sample Output 0
+
+```text
+90
+154
+-1
+```
+
+---
+
+## Laughter is The Best Medicine
+
+Let us define the **Laughter sequence** as a sequence of strings only containing either the character "H" or "A". This sequence is defined recursively as:
+
+* $L_0 = H$
+* $L_1 = A$
+* $L_i = L_{i-2} \cdot L_{i-1}$, for $i > 1$
+
+($S_1 \cdot S_2$ means concatenate $S_1$ and $S_2$). The first few strings in the Laughter sequence are $H, A, HA, AHA, HAAHA, A H A H A A H A$.
+
+Given $i$ and $k$, determine whether the $k^{th}$ character in $L_i$ is an $H$ or an $A$.
+
+### Input Format
+
+Input consists of one test case. Each test case consists of one line with two space separated integers $i$ and $k$, denoting the **index of the string** in the Laughter sequence, and the **index of the character** to be checked. $k$ is a 0-based index.
+
+### Constraints
+
+$$0 \leq i \leq 10^5$$
+$$0 \leq k < \min(10^{18}, |L_i|)$$
+
+### Output Format
+
+Output consists of one line containing "H" (without the quotes), if the $k^{th}$ character in $L_i$ is an $H$. Output "A" (also without quotes), if the $k^{th}$ character in $L_i$ is an $A$.
+
+### Sample Input 0
+```text
+3 1
+```
+
+### Sample Output 0
+
+```text
+H
+```
+
+
+### Sample Input 1
+
+```text
+4 3
+```
+
+### Sample Output 1
+
+```text
+H
+```
+
+### Sample Input 2
+
+```text
+10 4
+```
+
+
+### Sample Output 2
+
+```text
+A
+```
 
