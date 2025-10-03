@@ -8,6 +8,8 @@ This repository contains solutions for a given problem set in CSALGCM
 - [It's Like I Have ESPN Or Something](#its-like-i-have-espn-or-something)
 - [Shattering the Towers of Algorythmos](#shattering-the-towers-of-algorythmos)
 - [Let's Plant Rice](#lets-plant-rice)
+- [Tbe Monkey's Paw](#the-monkeys-paw)
+- [Laughter is The Best Medicine](#laughter-is-the-best-medicine)
 
 ---
 
